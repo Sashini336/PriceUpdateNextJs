@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Ad from "../components/ad";
-import { captureRejectionSymbol } from "events";
 
 const adsPerPage = 12;
 
@@ -34,7 +33,7 @@ export default function Home({ data }) {
   };
 
   const filteredAds = data.filter((ad) => {
-    return ad.title.toLowerCase().includes(searchField.toLowerCase());
+    return ad.title.toLowerCase();
   });
 
   const pageAds = filteredAds.slice(0, displayedAds);
@@ -56,10 +55,12 @@ export default function Home({ data }) {
               Submit
             </button>
           </form>
-          <div className="loadMoreAdsContainer">
-            {pageAds.map((ad, index) => (
-              <Ad key={index} data={ad} />
-            ))}
+          <div className="ads">
+            <div className="loadMoreAdsContainer">
+              {pageAds.map((ad, index) => (
+                <Ad key={index} data={ad} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

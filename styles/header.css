@@ -1,11 +1,27 @@
 .header {
-    display: flex;
-    background-color: black;
+  position: relative;
+  background-color: #19191f;
+  background-image: linear-gradient(#19191f);
+  width: 100%;
+  bottom: 30px;
 }
 
-
-h1 {
-    font-size: 30px;
-    color: #f9f9f9;
+.header #logo {
+  display: flex;
+  max-width: 200px;
+  max-height: 175px;
+  margin: 0 auto;
 }
 
+.header #homeButton {
+  display: inline;
+  color: #fff;
+  margin: 0 auto;
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+.header #homeButton:hover {
+  background-color: #2500aa;
+  color: white;
+}

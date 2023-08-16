@@ -5,13 +5,12 @@ export default function Ad({ data }) {
 
   return (
     <div className="smallAd">
-      <img id="image" src={images.image} alt="Image" />
+      <img id="image" src={images[0].image} alt="Image" />
       <div className="infoSmallAd">
         <Link className="link" id="link" href={`/${id}`}>
           {title}
         </Link>
-        <p className="priceSmallAd">{data.price[0].price}</p>
-        <p className="dateSmallAd">{year}</p>
+        <p className="priceSmallAd">{data.price[0].price} лв</p>
         <p className="millageSmallAd">{millage}</p>
         <p className="yearSmallAd">{year} г.</p>
       </div>

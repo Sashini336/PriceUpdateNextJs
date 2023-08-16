@@ -58,13 +58,6 @@ main {
   position: relative;
 }
 
-.ads {
-  display: grid;
-  max-width: 100%;
-  position: relative;
-  grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 55px;
-}
 
 /* Scaling */
 @media only screen and (max-width: 600px) {
@@ -153,29 +146,29 @@ img#imagesSingleAd {
 }
 
 /* Scaling */
-@media  screen and (max-width: 600px) {
-  img#imagesSingleAd{
+@media screen and (max-width: 600px) {
+  img#imagesSingleAd {
     max-width: 450px;
   }
 }
 
-@media  screen and (min-width: 600px) {
-  img#imagesSingleAd{
+@media screen and (min-width: 600px) {
+  img#imagesSingleAd {
     max-width: 550px;
   }
 }
 @media screen and (min-width: 768px) {
-  img#imagesSingleAd{
+  img#imagesSingleAd {
     max-width: 700px;
   }
 }
 @media screen and (min-width: 992px) {
-  img#imagesSingleAd{
+  img#imagesSingleAd {
     max-width: 700px;
   }
 }
 @media screen and (min-width: 1200px) {
-  img#imagesSingleAd{
+  img#imagesSingleAd {
     max-width: 700px;
   }
 }
@@ -206,7 +199,6 @@ p#singleInfo {
   max-width: 580px;
 }
 
-
 .specsSingleAd {
   display: flex;
   position: relative;
@@ -225,7 +217,6 @@ p#singleInfo {
   font-size: 18px;
 }
 
-
 .sellerContainer {
   display: flex;
   margin-left: 770px;
@@ -237,7 +228,7 @@ p#singleInfo {
 }
 
 .sellerInfo a {
-  color:#2901dd;
+  color: #2901dd;
   font-size: 1.1em;
   text-decoration: underline;
 }
@@ -245,23 +236,12 @@ p#singleInfo {
 /* BUTTON */
 
 .loadMoreAdsContainer {
-  display: flex;
-  margin-top: 20px;
-}
-
-.loadMoreAds {
-  font: inherit;
-  appearance: none;
-  border: none;
-  font-size: inherit;
-  border-radius: 35px;
-  padding: 15px 25px;
-  background: #000;
-  color: white;
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  display: grid;
+  margin-top: 75px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 55px;
+  max-width: 100%;
+  grid-gap: 30px;
 }
 
 .loadMoreAds:hover {
