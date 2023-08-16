@@ -59,7 +59,7 @@ function SingleCarAds({ data }) {
         </div>
         <div className="desc">
           <p id="name">{data.title}</p>
-          <p id="price">{data.price[0].price}</p>
+          <p id="price">{data.price[0].price} лв.</p>
           <div className="singleAdContainer">
             <ul className="specsSingleAd">
               <li>
@@ -70,6 +70,8 @@ function SingleCarAds({ data }) {
               </li>
               <li>
                 Мощност: <p id="infoCarSingle">{data.horsepower}</p>
+              </li>
+              <li>
                 Скоростна кути: <p id="infoCarSingle">{data.transmission}</p>
               </li>
               <li>
