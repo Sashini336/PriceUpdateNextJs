@@ -17,26 +17,26 @@ function formatXAxisTick() {
 export default function Chart({ data }) {
   return (
     <AreaChart
-      width={550}
-      height={250}
+      width={650}
+      height={340}
       data={data}
       margin={{
-        top: 0,
+        top: 10,
         right: 0,
-        left: 0,
-        bottom: -10,
+        left: 30,
+        bottom: 0,
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="date" name="Дата" />
-      <YAxis dataKey="" />
+      <YAxis />
       <Tooltip />
       <Area
         type="monotone"
         name="Цена"
         dataKey="price"
-        stroke="#8884d8"
-        fill="#8884d8"
+        stroke="#0000FF"
+        fill="#1249FF"
       />
     </AreaChart>
   );

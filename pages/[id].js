@@ -10,7 +10,6 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-
 import Chart from "../components/chart";
 import { chartData } from "../components/chart";
 
@@ -49,6 +48,7 @@ function SingleCarAds({ data }) {
       <main>
         <div className="wholePageContainer">
           <h3 id="singleAdTitle">{data.title}</h3>
+          {/* <p id="price">{data.price[data.price.length - 1].price} лв.</p> */}
           <div className="adContainer">
             <div className="swiperContainer">
               <Swiper
@@ -69,39 +69,40 @@ function SingleCarAds({ data }) {
                   </SwiperSlide>
                 ))}
               </Swiper>
+
+              <p id="price">{data.price[data.price.length - 1].price} лв.</p>
+              <div className="desc">
+                {/* <p id="name">{data.title}</p> */}
+                {/* <p id="price">{data.price[data.price.length - 1].price} лв.</p> */}
+                <div className="singleAdContainer">
+                  <ul className="specsSingleAd">
+                    <li>
+                      Дата на производство :{" "}
+                      <p id="infoCarSingle">{data.year}</p>
+                    </li>
+                    <li>
+                      Тип двигател: <p id="infoCarSingle">{data.fuel_type}</p>
+                    </li>
+                    <li>
+                      Мощност: <p id="infoCarSingle">{data.horsepower}</p>
+                    </li>
+                    <li>
+                      Скоростна кути:{" "}
+                      <p id="infoCarSingle">{data.transmission}</p>
+                    </li>
+                    <li>
+                      Пробег: <p id="infoCarSingle">{data.millage}</p>
+                    </li>
+                    <li>
+                      Цвят: <p id="infoCarSingle">{data.color}</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
             <div className="chart">
-              <Chart data={chartData} />
-            </div>
-          </div>
-          <div className="desc">
-            <p id="name">{data.title}</p>
-            <p id="price">{data.price[data.price.length - 1].price} лв.</p>
-            <div className="singleAdContainer">
-              <ul className="specsSingleAd">
-                <li>
-                  Дата на производство : <p id="infoCarSingle">{data.year}</p>
-                </li>
-                <li>
-                  Тип двигател: <p id="infoCarSingle">{data.fuel_type}</p>
-                </li>
-                <li>
-                  Мощност: <p id="infoCarSingle">{data.horsepower}</p>
-                </li>
-                <li>
-                  Скоростна кути: <p id="infoCarSingle">{data.transmission}</p>
-                </li>
-                <li>
-                  Пробег: <p id="infoCarSingle">{data.millage}</p>
-                </li>
-                <li>
-                  Цвят: <p id="infoCarSingle">{data.color}</p>
-                </li>
-              </ul>
-            </div>
-            <div className="moreInfoContainer">
-              <p id="additionalInfo"> Допълнителна Информация: </p>
-              <p id="singleInfo">{data.more_information}</p>
+              <h4 id="chartTitle">История на цена :</h4>
+              <Chart data={chartData}></Chart>
             </div>
           </div>
         </div>

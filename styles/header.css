@@ -1,5 +1,4 @@
 .header {
-  position: relative;
   background-color: #19191f;
   background-image: linear-gradient(#19191f);
   width: 100%;
@@ -15,6 +14,7 @@
 
 .header #homeButton {
   display: inline;
+  max-width: 100%;
   color: #fff;
   margin: 0 auto;
   padding: 0 5px;

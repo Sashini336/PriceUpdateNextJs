@@ -1,0 +1,95 @@
+.wholePageContainer {
+  max-width: 2500px;
+  margin-left: 10px;
+}
+.adContainer {
+  display: flex;
+  max-width: 1750px;
+}
+
+.swiperContainer {
+  max-width: 650px;
+}
+
+.titleAndPrice {
+  margin-bottom: 10px;
+}
+
+h3 {
+  display: inline;
+  font-size: 30px;
+}
+
+p#price {
+  display: inline;
+  margin-left: 455px;
+  font-size: 33px;
+  font-weight: bold;
+  color: blue;
+}
+
+img#imagesSingleAd {
+  width: 650px;
+  height: 450px;
+  border: solid 1px #000;
+  border-radius: 2px;
+}
+
+/* Scaling single AD  */
+
+@media screen and (max-width: 600px) {
+  img#imagesSingleAd {
+    max-width: 450px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  img#imagesSingleAd {
+    max-width: 550px;
+  }
+}
+@media screen and (min-width: 768px) {
+  img#imagesSingleAd {
+    max-width: 750px;
+  }
+}
+@media screen and (min-width: 992px) {
+  img#imagesSingleAd {
+    max-width: 750px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  img#imagesSingleAd {
+    max-width: 750px;
+  }
+}
+
+/* chart */
+
+.chart {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+h4#chartTitle{
+  font-size:22px;
+}
+/*  */
+/* Desc */
+
+.desc {
+  margin-left: 10px;
+}
+.specsSingleAd {
+  display: inline;
+  position: relative;
+  flex-direction: column;
+  font-size: 21px;
+}
+.specsSingleAd #infoCarSingle {
+  display: inline;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 19px;
+  margin-left: 10px;
+}
