@@ -1,6 +1,18 @@
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import React, { useState } from "react";
+import React, { useState, PureComponent } from "react";
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+
+import Chart from "../components/chart";
+import { chartData } from "../components/chart";
 
 export async function getStaticProps({ params }) {
   const res = await fetch(`http://127.0.0.1:8000/ads/${params.id}/`);
@@ -28,7 +40,10 @@ export const getStaticPaths = async () => {
 };
 
 function SingleCarAds({ data }) {
-  console.log(data.price);
+  const chartData = data.price.map((ad) => ({
+    date: ad.date,
+    price: parseFloat(ad.price),
+  }));
   return (
     <div>
       <main>
@@ -55,42 +70,39 @@ function SingleCarAds({ data }) {
                 ))}
               </Swiper>
             </div>
+            <div className="chart">
+              <Chart data={chartData} />
+            </div>
           </div>
-        </div>
-        <div className="desc">
-          <p id="name">{data.title}</p>
-          <p id="price">{data.price[0].price} лв.</p>
-          <div className="singleAdContainer">
-            <ul className="specsSingleAd">
-              <li>
-                Дата на производство : <p id="infoCarSingle">{data.year}</p>
-              </li>
-              <li>
-                Тип двигател: <p id="infoCarSingle">{data.fuel_type}</p>
-              </li>
-              <li>
-                Мощност: <p id="infoCarSingle">{data.horsepower}</p>
-              </li>
-              <li>
-                Скоростна кути: <p id="infoCarSingle">{data.transmission}</p>
-              </li>
-              <li>
-                Категория: <p id="infoCarSingle">{data.category}</p>
-              </li>
-              <li>
-                {/* Евростандарт: <p id="infoCarSingle">{data.eco}</p> */}
-              </li>
-              <li>
-                Пробег: <p id="infoCarSingle">{data.millage}</p>
-              </li>
-              <li>
-                Цвят: <p id="infoCarSingle">{data.color}</p>
-              </li>
-            </ul>
-          </div>
-          <div className="moreInfoContainer">
-            <p id="additionalInfo"> Допълнителна Информация: </p>
-            <p id="singleInfo">{data.more_information}</p>
+          <div className="desc">
+            <p id="name">{data.title}</p>
+            <p id="price">{data.price[data.price.length - 1].price} лв.</p>
+            <div className="singleAdContainer">
+              <ul className="specsSingleAd">
+                <li>
+                  Дата на производство : <p id="infoCarSingle">{data.year}</p>
+                </li>
+                <li>
+                  Тип двигател: <p id="infoCarSingle">{data.fuel_type}</p>
+                </li>
+                <li>
+                  Мощност: <p id="infoCarSingle">{data.horsepower}</p>
+                </li>
+                <li>
+                  Скоростна кути: <p id="infoCarSingle">{data.transmission}</p>
+                </li>
+                <li>
+                  Пробег: <p id="infoCarSingle">{data.millage}</p>
+                </li>
+                <li>
+                  Цвят: <p id="infoCarSingle">{data.color}</p>
+                </li>
+              </ul>
+            </div>
+            <div className="moreInfoContainer">
+              <p id="additionalInfo"> Допълнителна Информация: </p>
+              <p id="singleInfo">{data.more_information}</p>
+            </div>
           </div>
         </div>
       </main>

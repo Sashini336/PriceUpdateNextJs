@@ -128,110 +128,7 @@ main {
   margin: 0;
 }
 
-/* single AD below */
 
-.wholePageContainer {
-  margin-left: 9px;
-  margin-top: -30px;
-}
-
-h3#singleAdTitle {
-  font-size: 25px;
-}
-
-img#imagesSingleAd {
-  max-width: 700px;
-  border: solid 1px #000;
-  border-radius: 2px;
-}
-
-/* Scaling */
-@media screen and (max-width: 600px) {
-  img#imagesSingleAd {
-    max-width: 450px;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  img#imagesSingleAd {
-    max-width: 550px;
-  }
-}
-@media screen and (min-width: 768px) {
-  img#imagesSingleAd {
-    max-width: 700px;
-  }
-}
-@media screen and (min-width: 992px) {
-  img#imagesSingleAd {
-    max-width: 700px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  img#imagesSingleAd {
-    max-width: 700px;
-  }
-}
-/*  */
-
-.swiperContainer {
-  max-width: 700px;
-}
-
-p#name {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-p#price {
-  font-size: 30px;
-  color: #2901dd;
-  font-weight: bold;
-  margin: -35px 0 0 540px;
-}
-
-p#additionalInfo {
-  font-weight: bold;
-  font-size: 19px;
-}
-
-p#singleInfo {
-  max-width: 580px;
-}
-
-.specsSingleAd {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  font-size: 18px;
-}
-.specsSingleAd #infoCarSingle {
-  display: inline;
-  font-weight: bold;
-  font-size: 17px;
-  margin-left: 10px;
-}
-
-.moreInfoContainer {
-  position: relative;
-  font-size: 18px;
-}
-
-.sellerContainer {
-  display: flex;
-  margin-left: 770px;
-  max-height: 0;
-}
-
-.sellerInfo p {
-  font-weight: bold;
-}
-
-.sellerInfo a {
-  color: #2901dd;
-  font-size: 1.1em;
-  text-decoration: underline;
-}
 
 /* BUTTON */
 
@@ -247,4 +144,113 @@ p#singleInfo {
 .loadMoreAds:hover {
   color: rgb(255, 255, 255);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+/* Single ad */
+
+
+.adContainer {
+  display:flex;
+  max-width: 2000px;
+
+}
+
+.swiperContainer {
+  max-width: 750px;
+  margin-left: 10px;
+}
+
+img#imagesSingleAd { 
+  width: 750px;
+  height: 550px;
+  border: solid 1px #000;
+  border-radius: 2px;
+}
+
+.desc {
+  margin-left: 10px;
+}
+
+.specsSingleAd {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  font-size: 18px;
+}
+.specsSingleAd #infoCarSingle {
+  display: inline;
+  font-weight: bold;
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+
+.moreInfoContainer {
+  position: relative;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+p#name {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+p#price {
+  font-size: 30px;
+  color: #2901dd;
+  font-weight: bold;
+  margin: -55px 0 0 615px;
+}
+
+p#additionalInfo {
+  font-weight: bold;
+  font-size: 19px;
+}
+
+p#singleInfo {
+  max-width: 580px;
+}
+
+
+/* chart */
+
+.chart{
+  display:flex;
+
+  margin-left: 50px;
+  margin-top: 150px;
+}
+
+
+/* Scaling single AD  */
+
+@media  screen and (max-width: 600px) {
+  img#imagesSingleAd{
+    max-width: 450px;
+  }
+}
+
+@media  screen and (min-width: 600px) {
+  img#imagesSingleAd{
+    max-width: 550px;
+  }
+}
+@media screen and (min-width: 768px) {
+  img#imagesSingleAd{
+    max-width: 750px;
+  }
+}
+@media screen and (min-width: 992px) {
+  img#imagesSingleAd{
+    max-width: 750px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  img#imagesSingleAd{
+    max-width: 750px;
+  }
 }
