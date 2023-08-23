@@ -1,13 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Ad from "../components/ad";
 
 const adsPerPage = 12;
 
-export default function Home({ data }) {
+export default function Home({}) {
   const [searchField, setSearchField] = useState("");
   const [displayedAds, setDisplayedAds] = useState(adsPerPage);
-  const router = useRouter();
+  const [data, setData] = useState([]);
+
+  const fetchData = async () => {
+    const res = await fetch("http://127.0.0.1:8000/ads/");
+    const newData = await res.json();
+    setData(newData);
+  };
+
+  useEffect(() => {
+    fetchData();
+
+    const pollingInterval = setInterval(() => {
+      fetchData();
+    }, 5000);
+
+    return () => clearInterval(pollingInterval);
+  }, []);
+
+  useEffect(() => {}, [data]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -68,10 +86,10 @@ export default function Home({ data }) {
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch("http://127.0.0.1:8000/ads/");
-  const data = await res.json();
-  return {
-    props: { data },
-  };
-}
+// export async function getStaticProps() {
+//   const res = await fetch("http://127.0.0.1:8000/ads/");
+//   const data = await res.json();
+//   return {
+//     props: { data },
+//   };
+// }
